@@ -1,0 +1,16 @@
+<div class="container mb-3 mt-3 p-3 border rounded bg-light">
+  <!-- app/views/restaurants/index.html.erb -->
+<h1 class="mb-4">Restaurants</h1>
+
+<%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-primary mb-3' %>
+
+<ul class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center mb-1 mt-3 p-3 rounded">
+      <%= link_to restaurant.name, restaurant, class: 'text-decoration-none text-black' %>
+      <span class="badge bg-primary rounded m-3 p-3 "><%= restaurant.category.capitalize %></span>
+    </li>
+  <% end %>
+</ul>
+
+</div>

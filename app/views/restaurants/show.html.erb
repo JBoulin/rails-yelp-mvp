@@ -1,0 +1,19 @@
+<div class="container mb-3 mt-3 p-3 bg-light border rounded">
+  <h1 class="mb-4"><%= @restaurant.name %></h1>
+
+  <p class="mb-3 border-1 rounded"><strong>Address:</strong> <%= @restaurant.address %></p>
+  <p class="mb-3 border-1 rounded"><strong>Category:</strong> <%= @restaurant.category.capitalize %></p>
+  <p class="mb-3 border-1 rounded"><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
+
+  <h2 class="mt-4">Reviews</h2>
+  <ul class="list-group mt-3">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <strong>Rating:</strong> <%= review.rating %> - <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Add a Review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary mt-3' %>
+  <%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-secondary mt-3' %>
+</div><!-- app/views/restaurants/show.html.erb -->

@@ -12,7 +12,7 @@ require 'faker'
 puts 'Cleaning database...'
 Restaurant.destroy_all
 
-puts "Creating 5 records..."
+puts 'Creating 5 records...'
 
 5.times do
   restaurant = Restaurant.create(

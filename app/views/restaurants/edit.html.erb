@@ -1,0 +1,25 @@
+<div class="container mb-3 mt-3 p-3 border rounded bg-light">
+  <h1 class="mb-4">Edit Restaurant</h1>
+
+  <%= form_with(model: @restaurant, local: true) do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :address, class: 'form-label' %>
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :category, class: 'form-label' %>
+      <%= form.select :category, Restaurant::CATEGORIES, {}, { class: 'form-select' } %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :phone_number, class: 'form-label' %>
+      <%= form.text_field :phone_number, class: 'form-control' %>
+    </div>
+    <%= form.submit 'Update Restaurant', class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-secondary mt-3' %>
+</div>
